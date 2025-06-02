@@ -6,8 +6,36 @@
 
   --color-shockingly-green: #0ae448;
   --color-lt-green: #abff84;
-  --color-ui-gradient: radial-gradient(78.77% 78.77% at 71.71% 30.77%, #f0fcff 0%, #9bedff 67.21%, #98ecff 76.04%, #5be1ff 84.9%, #00bae2 94.79%);
-  --gradient-macha: linear-gradient(114.41deg, var(--color-shockingly-green) 20.74%, var(--color-lt-green) 65.5%);
+  --color-ui-gradient: radial-gradient(
+    78.77% 78.77% at 71.71% 30.77%,
+    #f0fcff 0%,
+    #9bedff 67.21%,
+    #98ecff 76.04%,
+    #5be1ff 84.9%,
+    #00bae2 94.79%
+  );
+  --gradient-macha: linear-gradient(
+    114.41deg,
+    var(--color-shockingly-green) 20.74%,
+    var(--color-lt-green) 65.5%
+  );
+  --gradient-purple-haze: linear-gradient(
+    153.58deg,
+    #f7bdf8 32.25%,
+    #2f3cc0 92.68%
+  );
+  --gradient-lipstick: linear-gradient(
+    165.72deg,
+    #f7bdf8 21.15%,
+    #cd237f 81.93%
+  );
+}
+
+section {
+  margin: 5rem 0;
+  padding: 1rem 3rem 3rem 3rem;
+  border-radius: 1rem;
+  background-color: #333;
 }
 
 .logo {
@@ -32,7 +60,15 @@
   color: #888;
 }
 
-.timeline-container{
+.flex-row {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.timeline-container {
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -40,12 +76,30 @@
   align-items: center;
 }
 
-.box.green, .gradient-green {
-  background: var(--gradient-macha), url(https://assets.codepen.io/16327/noise-e82662fe.png);
+.box.green,
+.gradient-green {
+  background: var(--gradient-macha),
+    url(https://assets.codepen.io/16327/noise-e82662fe.png);
   background-blend-mode: color-dodge;
 }
 
-.box.blue, .gradient-blue {
-  background: var(--color-ui-gradient), url(https://assets.codepen.io/16327/noise-e82662fe.png);
+.box.blue,
+.gradient-blue {
+  background: var(--color-ui-gradient),
+    url(https://assets.codepen.io/16327/noise-e82662fe.png);
+  background-blend-mode: color-dodge;
+}
+
+.box.purple,
+.gradient-purple {
+  background: var(--gradient-purple-haze),
+    url(https://assets.codepen.io/16327/noise.png);
+  background-blend-mode: color-dodge;
+}
+
+.box.red,
+.gradient-red {
+  background: var(--gradient-lipstick),
+    url(https://assets.codepen.io/16327/noise.png);
   background-blend-mode: color-dodge;
 }

@@ -5,44 +5,37 @@ import "./App.css";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Box from "./components/Box";
-import Circle from "./components/Circle";
+import Shapes from "./components/Shapes";
+import DelayedAnimation from "./components/DelayedAnimation";
+import StateDependentAnimation from "./components/StateDependentAnimation";
+import MouseAnimation from "./components/MouseAnimation";
+
+gsap.registerPlugin(useGSAP);
 
 function App() {
   const [count, setCount] = useState(0);
-  const container = useRef();
-  const tl = useRef();
+  const timelineContainer = useRef();
 
-  const { contextSafe } = useGSAP(() => {
-    gsap.to(".logo", {
-      scale: 1,
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-      ease: "power2.inOut",
-      stagger: {
-        amount: 0.5,
-        from: "start",
-      },
-    });
-
-    tl.current = gsap
-      .timeline()
-      .to(".box", {
-        rotate: 360,
-      })
-      .to(".circle", {
-        x: 100,
+  useGSAP(
+    () => {
+      gsap.to(".logo", {
+        scale: 1,
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        ease: "power2.inOut",
+        stagger: {
+          amount: 0.5,
+          from: "start",
+        },
       });
-  });
-
-  const toggleTimeline = contextSafe(() => {
-    tl.current.reversed(!tl.current.reversed());
-  });
+    },
+    { scope: timelineContainer }
+  );
 
   return (
     <>
-      <div ref={container}>
+      <div ref={timelineContainer}>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -62,11 +55,22 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <div className="timeline-container">
-        <button onClick={toggleTimeline}>Toggle</button>
-        <Box />
-        <Circle />
-      </div>
+      <section>
+        <h2>Shapes Animation with GSAP's safe context</h2>
+        <Shapes />
+      </section>
+      <section>
+        <h2>Delayed Animation</h2>
+        <DelayedAnimation />
+      </section>
+      <section>
+        <h2>State dependent animation</h2>
+        <StateDependentAnimation />
+      </section>
+      <section>
+        <h2>Animate on mouse move</h2>
+        <MouseAnimation />
+      </section>
     </>
   );
 }

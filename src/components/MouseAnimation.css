@@ -1,0 +1,14 @@
+.mouse-container {
+  background-color: #080808;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.flair {
+  width: 100px;
+  height: 100px;
+  background-image: url(https://assets.codepen.io/16327/flair.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
