@@ -1,0 +1,51 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  --color-shockingly-green: #0ae448;
+  --color-lt-green: #abff84;
+  --color-ui-gradient: radial-gradient(78.77% 78.77% at 71.71% 30.77%, #f0fcff 0%, #9bedff 67.21%, #98ecff 76.04%, #5be1ff 84.9%, #00bae2 94.79%);
+  --gradient-macha: linear-gradient(114.41deg, var(--color-shockingly-green) 20.74%, var(--color-lt-green) 65.5%);
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  transform: scale(0.5);
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.timeline-container{
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.green, .gradient-green {
+  background: var(--gradient-macha), url(https://assets.codepen.io/16327/noise-e82662fe.png);
+  background-blend-mode: color-dodge;
+}
+
+.box.blue, .gradient-blue {
+  background: var(--color-ui-gradient), url(https://assets.codepen.io/16327/noise-e82662fe.png);
+  background-blend-mode: color-dodge;
+}
